@@ -1,0 +1,299 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Nova paleta de cores */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+
+    /* Primary: Azul Profundo #243C74 */
+    --primary: 218 52% 30%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 218 52% 70%;
+    --primary-glow: 218 52% 50%;
+
+    /* Secondary: Cinza Claro #F5F5F7 */
+    --secondary: 240 25% 97%;
+    --secondary-foreground: 0 0% 20%;
+    --secondary-accent: 240 15% 85%;
+
+    /* Muted: Cinza neutro */
+    --muted: 240 25% 97%;
+    --muted-foreground: 0 0% 40%;
+
+    /* Accent: Cinza suave */
+    --accent: 240 25% 95%;
+    --accent-foreground: 0 0% 20%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 15% 90%;
+    --input: 240 15% 90%;
+    --ring: 218 52% 30%;
+
+    /* Cores específicas dos agentes */
+    --agent-tdah: 25 100% 65%;
+    --agent-surdo: 197 81% 61%;
+    --agent-dislexia: 142 69% 60%;
+    --agent-tea: 270 59% 64%;
+    --agent-narrador: 46 100% 67%;
+
+    /* Design tokens atualizados */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-accent)));
+    --gradient-gentle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
+    --gradient-tdah: linear-gradient(135deg, hsl(var(--agent-tdah)), hsl(25 100% 75%));
+    --gradient-surdo: linear-gradient(135deg, hsl(var(--agent-surdo)), hsl(197 81% 71%));
+    --gradient-dislexia: linear-gradient(135deg, hsl(var(--agent-dislexia)), hsl(142 69% 70%));
+    --gradient-tea: linear-gradient(135deg, hsl(var(--agent-tea)), hsl(270 59% 74%));
+    --gradient-narrador: linear-gradient(135deg, hsl(var(--agent-narrador)), hsl(46 100% 77%));
+    
+    /* Sombras atualizadas */
+    --shadow-soft: 0 4px 16px -4px rgba(0, 0, 0, 0.08);
+    --shadow-card: 0 2px 12px -2px rgba(0, 0, 0, 0.08);
+    --shadow-focus: 0 0 0 3px hsl(var(--primary) / 0.3);
+    
+    /* Transitions for smooth interactions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-theme: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-theme-fast: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme com nova paleta */
+    --background: 218 52% 12%;
+    --foreground: 0 0% 95%;
+
+    --card: 218 52% 15%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 218 52% 15%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Primary: Azul mais claro para dark mode */
+    --primary: 218 52% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 218 52% 80%;
+    --primary-glow: 218 52% 70%;
+
+    /* Secondary: Cinza escuro */
+    --secondary: 218 30% 18%;
+    --secondary-foreground: 0 0% 85%;
+    --secondary-accent: 240 15% 30%;
+
+    /* Muted: Dark mode grays */
+    --muted: 218 30% 18%;
+    --muted-foreground: 0 0% 70%;
+
+    /* Accent: Dark mode */
+    --accent: 218 30% 20%;
+    --accent-foreground: 0 0% 85%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 218 30% 25%;
+    --input: 218 30% 25%;
+    --ring: 218 52% 60%;
+
+    /* Cores dos agentes mantidas */
+    --agent-tdah: 25 100% 65%;
+    --agent-surdo: 197 81% 61%;
+    --agent-dislexia: 142 69% 60%;
+    --agent-tea: 270 59% 64%;
+    --agent-narrador: 46 100% 67%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-accent)));
+    --gradient-gentle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --gradient-tdah: linear-gradient(135deg, hsl(var(--agent-tdah)), hsl(25 100% 75%));
+    --gradient-surdo: linear-gradient(135deg, hsl(var(--agent-surdo)), hsl(197 81% 71%));
+    --gradient-dislexia: linear-gradient(135deg, hsl(var(--agent-dislexia)), hsl(142 69% 70%));
+    --gradient-tea: linear-gradient(135deg, hsl(var(--agent-tea)), hsl(270 59% 74%));
+    --gradient-narrador: linear-gradient(135deg, hsl(var(--agent-narrador)), hsl(46 100% 77%));
+    
+    /* Dark mode shadows */
+    --shadow-soft: 0 4px 16px -4px rgba(0, 0, 0, 0.4);
+    --shadow-card: 0 2px 12px -2px rgba(0, 0, 0, 0.5);
+    --shadow-focus: 0 0 0 3px hsl(var(--primary) / 0.4);
+    
+    /* Dark mode transitions */
+    --transition-theme: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-theme-fast: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    transition: var(--transition-theme);
+  }
+  
+  /* Smooth theme transitions for all elements */
+  * {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Faster transitions for interactive elements */
+  button, a, input, textarea, select {
+    transition-duration: 0.25s;
+  }
+  
+  /* Smooth background transitions */
+  .bg-background,
+  .bg-card,
+  .bg-popover,
+  .bg-sidebar {
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Smooth text transitions */
+  .text-foreground,
+  .text-muted-foreground,
+  .text-primary,
+  .text-secondary {
+    transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Smooth border transitions */
+  .border,
+  .border-border {
+    transition: border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Smooth shadow transitions */
+  .shadow-soft,
+  .shadow-card,
+  .shadow-focus {
+    transition: box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer components {
+  /* Line clamping utilities for text overflow control */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Enhanced theme transition utilities */
+  .theme-transition {
+    transition: var(--transition-theme);
+  }
+  
+  .theme-transition-fast {
+    transition: var(--transition-theme-fast);
+  }
+  
+  /* Smooth theme switch animation */
+  .theme-switch-button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .theme-switch-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Enhanced icon transitions */
+  .theme-icon {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Smooth background transitions for gradients */
+  .bg-gradient-primary,
+  .bg-gradient-secondary,
+  .bg-gradient-gentle {
+    transition: background-image 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer utilities {
+  /* Animações sutis e constantes */
+  @keyframes floatSlow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+  .anim-float {
+    animation: floatSlow 4s ease-in-out infinite;
+  }
+
+  @keyframes breatheCard {
+    0%, 100% { box-shadow: var(--shadow-card); }
+    50% { box-shadow: 0 6px 20px -4px rgba(0, 0, 0, 0.12); }
+  }
+  .anim-breathe {
+    animation: breatheCard 5s ease-in-out infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 0 rgba(0,0,0,0); }
+    50% { box-shadow: 0 0 18px 2px hsl(var(--primary) / 0.25); }
+  }
+  .anim-pulse-glow {
+    animation: pulseGlow 3.5s ease-in-out infinite;
+  }
+
+  @keyframes glowText {
+    0%, 100% { text-shadow: 0 0 0px hsl(var(--primary)); }
+    50% { text-shadow: 0 0 14px hsl(var(--primary-glow)); }
+  }
+  .anim-glow-text {
+    animation: glowText 2.6s ease-in-out infinite;
+  }
+}
